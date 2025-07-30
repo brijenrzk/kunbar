@@ -58,7 +58,6 @@ const Hero = () => {
                 trigger: "video",
                 start: startValue,
                 end: endValue,
-                markers: true,
                 scrub: true,
                 pinSpacing: isMobile ? -80 : 0,
                 pin: true,
