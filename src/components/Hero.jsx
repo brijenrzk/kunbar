@@ -51,7 +51,7 @@ const Hero = () => {
             .to(".arrow", { y: 100 }, 0);
 
         const startValue = isMobile ? "top 50%" : "center 60%";
-        const endValue = isMobile ? "150% top" : "bottom top";
+        const endValue = isMobile ? `+=${window.innerHeight * 1.328}` : "bottom top";
 
         let tl = gsap.timeline({
             scrollTrigger: {
@@ -60,6 +60,7 @@ const Hero = () => {
                 end: endValue,
                 markers: true,
                 scrub: true,
+                pinSpacing: isMobile ? -80 : 0,
                 pin: true,
             },
         });
@@ -109,8 +110,7 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-
-            <div className="video absolute inset-0">
+            <div className="video absolute inset-0 h-screen">
                 <video
                     ref={videoRef}
                     muted
@@ -119,6 +119,8 @@ const Hero = () => {
                     src="/videos/output.mp4"
                 />
             </div>
+
+
         </>
     );
 };
